@@ -17,6 +17,8 @@ class Command(BaseCommand):
         n_topics = 5
         plsa = PLSA(corpus, n_topics, True)
         result = plsa.fit()
-        result = plsa.best_of(5)
+        # result = plsa.best_of(5)
+        predict = result.predict('Some sample words')
 
         visualize = Visualize(result)
+        print('done!')
